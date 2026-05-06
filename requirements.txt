@@ -1,0 +1,4 @@
+crewai==1.10.1
+traceroot==0.1.5
+python-dotenv>=1.0.0
+litellm>=1.60.0

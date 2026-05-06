@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-incident-lab"
+version = "0.1.0"
+description = "CrewAI + TraceRoot demo with OpenRouter and fault scenarios."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Agent Incident Lab contributors" }]
+keywords = ["crewai", "traceroot", "observability", "agents", "opentelemetry"]
+dependencies = [
+  "crewai==1.10.1",
+  "traceroot==0.1.5",
+  "python-dotenv>=1.0.0",
+  "litellm>=1.60.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+agent-incident-lab = "agent_incident_lab.runner:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
